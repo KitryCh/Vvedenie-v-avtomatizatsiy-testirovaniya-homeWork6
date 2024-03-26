@@ -1,7 +1,9 @@
 package accuweather;
 
+import io.qameta.allure.*;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.example.accuweather.weather.DailyForecast;
 import org.example.accuweather.weather.Weather;
@@ -13,6 +15,12 @@ import static io.restassured.RestAssured.given;
 public class GetWeatherFifteenDayTest extends AccuweatherAbstractTest {
 
     @Test
+    @DisplayName("getWeatherFifteenDay")
+    @Description("GET WeatherFifteenDay")
+    @Link("")
+    @Severity(SeverityLevel.NORMAL)
+    @Owner("Черемных Екатерина")
+    @Story(value = "Тестирование WeatherFifteenDay")
     void getWeatherFifteenDay_shouldReturn() {
 
         Weather response = given()
@@ -31,6 +39,12 @@ public class GetWeatherFifteenDayTest extends AccuweatherAbstractTest {
     }
 
     @Test
+    @DisplayName("getDailyForecastsList")
+    @Description("GET DailyForecastsList")
+    @Link("")
+    @Severity(SeverityLevel.NORMAL)
+    @Owner("Черемных Екатерина")
+    @Story(value = "Тестирование DailyForecastsList")
     void getDailyForecastsList() {
 
         List<DailyForecast> response = given()
@@ -47,6 +61,12 @@ public class GetWeatherFifteenDayTest extends AccuweatherAbstractTest {
     }
 
     @Test
+    @DisplayName("getString")
+    @Description("GET String")
+    @Link("")
+    @Severity(SeverityLevel.NORMAL)
+    @Owner("Черемных Екатерина")
+    @Story(value = "Тестирование getString")
     void getString() {
         String response = given()
                 .queryParam("apikey", getApiKey())
